@@ -8,7 +8,7 @@ on:
 env:
   groupId: com.yuanmai.protobuf
   artifactId: yuanmai-mall-java
-  version: 21.1-SNAPSHOT
+  version: 21.1
   nexus-repository: maven-releases
 
 jobs:
