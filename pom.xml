@@ -11,7 +11,33 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
-
+    <repositories>
+        <repository>
+            <id>ym-nexus</id>
+            <url>https://nexus.xingchenga.xyz/repository/maven-public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <!--always daily interval:XXX-->
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>ym-nexus</id>
+            <url>https://nexus.xingchenga.xyz/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>ym-nexus</id>
+            <url>https://nexus.xingchenga.xyz/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -23,17 +49,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <distributionManagement>
-        <repository>
-            <id>ym-nexus</id>
-            <url>https://nexus.xingchenga.xyz/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>ym-nexus</id>
-            <url>https://nexus.xingchenga.xyz/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>com.yuanmai.protobuf</groupId>
