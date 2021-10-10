@@ -108,7 +108,7 @@ enum PromotionType {
 enum SaleType{
     NORMAL = 0;
     PRESALE = 1;
-    S_PROMOTION = 2;
+    SALE_TYPE_PROMOTION = 2;
 }
 
 
