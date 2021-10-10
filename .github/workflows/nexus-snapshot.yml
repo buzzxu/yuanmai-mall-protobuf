@@ -7,8 +7,6 @@ on:
 env:
   groupId: com.yuanmai.protobuf
   artifactId: yuanmai-mall-java
-  version: 21.1-SNAPSHOT
-  nexus-repository: maven-snapshots
 
 jobs:
   build-push-snapshot:
@@ -23,4 +21,4 @@ jobs:
           distribution: 'zulu'
           java-version: '16'
       - name: Build and Deploy with Maven
-        run: mvn deploy -Drversion=${{ env.version }} -Dpassword=${{ secrets.password }} --file pom.xml -s settings.xml
+        run: mvn deploy -Dpassword=${{ secrets.password }} --file pom.xml -s settings.xml

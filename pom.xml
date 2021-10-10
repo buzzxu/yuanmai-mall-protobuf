@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yuanmai</groupId>
-    <artifactId>yuanmai-mall-protobuf</artifactId>
+    <groupId>com.yuanmai.protobuf</groupId>
+    <artifactId>yuanmai-mall-java</artifactId>
     <version>21.1-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
