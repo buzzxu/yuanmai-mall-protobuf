@@ -1,0 +1,163 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.mall.protobuf";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go";
+
+//分类
+message Category {
+    int32 id = 1;
+    int32 parentId = 2;
+    string name = 3;
+    optional string code = 4;
+    optional string icon = 5;
+    optional string image = 6;
+    bool enabled = 7;
+    int32 sorted = 8;
+    int32 level = 9;
+    repeated Category children = 10;
+}
+//品牌
+message Brand{
+    int32 id = 1;
+    optional int32 categoryId = 2;
+    optional Category category =3;
+    string name = 4;
+    optional string image = 5;
+    optional string website = 6;
+    optional string regex = 7;
+    int32 sorted = 8;
+}
+//属性
+message Attr {
+    int64 id = 1;
+    optional int32 categoryId = 2;
+    string category = 3;
+    string code = 4;
+    string name = 5;
+    int32 sorted = 6;
+    repeated AttrVal vals = 7;
+}
+// 属性值
+message AttrVal {
+    int64 id = 1;
+    int64 attrId = 2;
+    string value = 3;
+    optional string icon = 4;
+    optional string symbol = 5;
+    optional string type = 6;
+}
+
+
+
+//产品历史
+message ProductHistory{
+    int64 id = 1;
+    int32 index = 2;
+    int64 userId = 3;
+    string userName = 4;
+    string name = 5;
+    string subTitle = 6;
+    optional string description = 7;
+    // 销售价 单位：分
+    int32 price = 8;
+    // 市场价 单位：分
+    int32 priceMarket = 9;
+    // 会员价 单位：分
+    int32 priceMember = 10;
+    // 成本价格 单位：分
+    int32 priceCost = 11;
+    // 修改时间
+    google.type.DateTime dateTime = 12;
+}
+//商品状态
+enum GoodsStatus{
+    NONE = 0;
+    UP = 1;
+    READY_UP = 2;
+    DOWN = -1;
+}
+//商品类型
+enum GoodsType{
+    //实体商品
+    PHYSICAL = 0;
+    //虚拟商品
+    VIRTUAL = 1;
+}
+
+
+enum PromotionType {
+    // 没有促销使用原价
+    PROMOTION_TYPE_NONE = 0;
+    // 使用促销价
+    PROMOTION = 1;
+    // 使用会员价
+    MEMBER = 2;
+    // 使用阶梯价格
+    LADDER = 3;
+    // 使用满减价格
+    FULL_REDUCT = 4;
+    // 限时购
+    TIMELIMIT = 5;
+}
+//销售类型
+enum SaleType{
+    NORMAL = 0;
+    PRESALE = 1;
+    S_PROMOTION = 2;
+}
+
+
+// 单位
+enum Units{
+//  个
+    PCS = 0;
+//  台
+    TAI = 1;
+//  盘
+    PAN = 2;
+//    根
+    GEN = 3;
+//    罐
+    GUAN = 4;
+//    卷
+    JUAN = 5;
+//    包
+    PACKAGE = 6;
+//    片
+    PIAN = 7;
+//    袋
+    BAG = 8;
+//    套
+    SET = 9;
+//    件
+    PIECE = 10;
+//    箱
+    CARTON = 11;
+//    组
+    GROUP = 12;
+//    张
+    SHEET = 13;
+//    把
+    BA = 14;
+//    米
+    M = 15;
+//    厘米
+    CM = 16;
+//    毫米
+    MM = 17;
+//    升
+    L = 18;
+//    毫升
+    MG =19;
+//    公斤
+    KG = 20;
+//    m²
+    PF = 21;
+//    m³
+    LF = 22;
+}
