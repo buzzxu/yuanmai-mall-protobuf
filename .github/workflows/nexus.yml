@@ -1,4 +1,4 @@
-name: Publish to Nexus Snapshot
+name: Publish to Nexus
 
 on:
   push:
@@ -9,7 +9,7 @@ env:
   artifactId: yuanmai-mall-java
 
 jobs:
-  build-push-snapshot:
+  build-push:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
