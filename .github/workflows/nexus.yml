@@ -1,6 +1,5 @@
-name: Publish to Nexus Release
+name: Publish to Nexus Snapshot
 
-# Run workflow on commits to the `master` branch
 on:
   push:
     branches:
@@ -8,11 +7,9 @@ on:
 env:
   groupId: com.yuanmai.protobuf
   artifactId: yuanmai-mall-java
-  version: 21.1
-  nexus-repository: maven-releases
 
 jobs:
-  build-push-release:
+  build-push-snapshot:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -23,16 +20,5 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '16'
-      - name: Build with Maven
-        run: mvn package -Drversion=${{ env.version }} --file pom.xml
-      - name: Nexus Repo Publish
-        uses: sonatype-nexus-community/nexus-repo-github-action@master
-        with:
-          serverUrl: https://nexus.xingchenga.xyz
-          username: admin
-          password: ${{ secrets.password }}
-          format: maven2
-          repository: ${{ env.nexus-repository }}
-          coordinates: groupId=${{ env.groupId }} artifactId=${{ env.artifactId }} version=${{ env.version }}
-          assets: extension=jar
-          filename: ./target/yuanmai-mall-protobuf-${{ env.version }}.jar
+      - name: Build and Deploy with Maven
+        run: mvn deploy -Dpassword=${{ secrets.password }} --file pom.xml -s settings.xml
