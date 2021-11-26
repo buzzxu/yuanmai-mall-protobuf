@@ -1,0 +1,25 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf.approval;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.approval";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;approval";
+
+// 审批状态
+enum ApprovalStatus {
+    // 未处理
+    NONE = 0;
+    // 处理中
+    ING = 1;
+    // 同意
+    SUCCESS = 2;
+    // 拒绝
+    FAIL = 3;
+    // 取消
+    CANCEL = 4;
+    // 部分成功
+    PART = 5;
+}

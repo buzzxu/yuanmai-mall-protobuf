@@ -24,10 +24,22 @@ enum PayState{
     // 关闭
     CLOSE = 5;
 }
+enum PaymentMethod{
+    // 现付
+    CASH = 0;
+    // 货到付款
+    DELIVERY = 1;
+    // 预付款
+    PRE_PAY = 2;
+    // 结算
+    SETTLEMENT = 3;
+    // 部分结算
+    SETTLEMENT_PART = 4;
+}
 // 退款状态
 enum RefundState {
     // 未申请
-    NONE = 0;
+    REFUND_STATE_NONE = 0;
     // 申请中
     APPLY = 1;
     // 退款中
@@ -37,4 +49,18 @@ enum RefundState {
     // 退款失败
     R_FAIL = 4;
 
+}
+
+// 支付渠道
+enum PayChannel{
+    // 未知
+    PAY_CHANNEL_NONE = 0;
+    // 微信
+    WEIXIN = 1;
+    // 支付宝
+    ALIPAY = 2;
+    // 余额
+    BALANCE = 3;
+    // 网关支付
+    GATEWAY = 4;
 }

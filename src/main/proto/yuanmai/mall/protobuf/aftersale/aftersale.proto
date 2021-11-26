@@ -3,11 +3,75 @@ package yuanmai.mall.protobuf.aftersale;
 
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
+import "yuanmai/mall/protobuf/order/order.proto";
+import "yuanmai/mall/protobuf/approval/approval.proto";
 
 option java_package = "com.yuanmai.protobuf.mall.aftersale";
 option java_multiple_files = true;
 option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;aftersale";
 
+message AfterSaleOrderInfo {
+    int64  id = 1;
+    // 供货商ID
+    int32  supplierId =2;
+    // 审核ID
+    int64 approvalId = 3;
+    // 售后订单编号
+    string orderNumber = 4;
+    // 父售后订单那编号
+    string parentOrderNumber = 5;
+    // 订单ID
+    int64 originOrderId = 6;
+    // 订单编号
+    string originOrderNumber = 7;
+    // 退款类型 0=退款,1=退货退款,2=换货
+    AfterSaleType type = 8;
+    // 0 未发起售后 1 申请售后 -1 售后已取消 2 处理中 3 处理完毕
+    AfterState state = 9;
+    // 临时订单状态 记录提交售后时，订单状态
+    yuanmai.mall.protobuf.order.OrderState temporaryState = 10;
+    // 审核状态
+    yuanmai.mall.protobuf.approval.ApprovalStatus approvalState = 11;
+    // 总金额
+    int64 amount = 12;
+    // 实际支付金额
+    int64 payAmount =13;
+    // 客户 选择原因
+    int32 reason = 14;
+    // 描述
+    string description = 15;
+    // 备注 客服填写
+    string remark =16;
+    // 操作人
+    int64 operatorId = 17;
+    // 操作人姓名
+    string operator = 18;
+    // 售后商品
+    repeated AfterSaleOrderItem items = 19;
+}
+
+
+message AfterSaleOrderItem{
+    int64 id = 1;
+    string productName = 2;
+    int32 number = 3;
+    // 金额
+    int64 amount = 4;
+    // 实际支付金额
+    int64 payAmount = 5;
+    // 单价
+    int64 price = 6;
+    string image = 7;
+    repeated string paths = 8;
+}
+enum AfterSaleType {
+    // 退款
+    REFUND = 0;
+    // 退货退款
+    RETURN = 1;
+    // 换货
+    EXCHANGE = 2;
+}
 // 售后状态
 enum AfterState{
     // 未发起售后
