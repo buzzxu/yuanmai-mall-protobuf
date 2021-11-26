@@ -1,0 +1,23 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf.order;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.order";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;order";
+
+
+
+message ItemSpec{
+    string name = 1;
+    string code = 2;
+    repeated ItemSpecVal vals = 3;
+}
+
+message ItemSpecVal{
+    string name = 1;
+    string code = 2;
+    google.protobuf.Any value = 3;
+}

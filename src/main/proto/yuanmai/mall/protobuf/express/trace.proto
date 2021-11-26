@@ -1,0 +1,36 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf.express;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.express";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;express";
+
+// 物流跟踪信息
+message TracesInfo{
+    string logisticID =1;
+    string orderNumber = 2;
+    int32 state = 3;
+    string stateDesc = 4;
+    bool signed =5;
+    repeated Trace tracks = 6;
+    string stateEx = 7;
+    string location = 8;
+    string station = 9;
+    string stationTel = 10;
+    string stationAdd = 11;
+    string deliveryMan = 12;
+    string deliveryManTel = 13;
+}
+
+message Trace{
+    string time = 1;
+    string context = 2;
+    string remark = 3;
+    string address = 4;
+    int32 code = 5;
+    string location = 6;
+    string action = 7;
+}

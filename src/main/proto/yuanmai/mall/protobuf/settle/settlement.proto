@@ -1,0 +1,39 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf.settle;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+option java_package = "com.yuanmai.protobuf.mall.settle";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;settle";
+
+// 结算方式
+enum SettlementMethod{
+    // 无结算
+    NONE = 0;
+    // 货到结算
+    DELIVERY = 1;
+    // 日结
+    DAY = 2;
+    // 周结
+    WEEK = 3;
+    // 月结
+    MONTH = 4;
+    // 当月结
+    CURR_MONTH = 5;
+    // 60天月结
+    DAYS_60 = 6;
+    // 90天月结
+    DAYS_90 = 7;
+    // 季结
+    SEASON = 8;
+}
+// 结算状态
+enum SettlementStatus{
+    // 未结算
+    STATUS_NONE = 0;
+    // 已提交
+    SUBMITTED = 1;
+    // 已结算
+    SUCCESS = 2;
+}

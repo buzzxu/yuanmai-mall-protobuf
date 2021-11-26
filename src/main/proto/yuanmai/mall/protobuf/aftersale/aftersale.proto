@@ -1,0 +1,23 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf.aftersale;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.aftersale";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;aftersale";
+
+// 售后状态
+enum AfterState{
+    // 未发起售后
+    NONE = 0;
+    // 申请售后
+    APPLY = 2;
+    // 处理中
+    ING = 1;
+    // 处理完毕
+    FINISH = 3;
+    // 售后已取消
+    CANCEL = -1;
+}

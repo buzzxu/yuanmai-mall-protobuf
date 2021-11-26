@@ -1,0 +1,37 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+import "yuanmai/mall/protobuf/order/order.proto";
+import "yuanmai/mall/protobuf/product/product.proto";
+import "yuanmai/mall/protobuf/express/express.proto";
+import "yuanmai/mall/protobuf/express/trace.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.order";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;order";
+
+message OrderDelivery {
+    int64 id = 1;
+    string parentOrderNumber = 2;
+    string orderNumber = 3;
+    string express = 4;
+    string expressCode = 5;
+    string expressNo = 6;
+    string content = 7;
+    yuanmai.mall.protobuf.express.ExpressState state = 8;
+    yuanmai.mall.protobuf.express.TracesInfo traces = 9;
+    repeated int64 itemIds = 10;
+    repeated OrderItemMini items = 11;
+}
+
+message OrderItemMini {
+    int64 id =1;
+    string productName = 2;
+    int32 number = 3;
+    int64 amount = 4;
+    string image =5;
+    yuanmai.mall.protobuf.product.Units unit = 6;
+    repeated yuanmai.mall.protobuf.order.ItemSpec specs = 7;
+}

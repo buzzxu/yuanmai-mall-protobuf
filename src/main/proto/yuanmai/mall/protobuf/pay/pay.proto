@@ -1,0 +1,40 @@
+syntax = "proto3";
+package yuanmai.mall.protobuf.pay;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.pay";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;pay";
+
+
+// 支付状态
+enum PayState{
+    // 未支付
+    UNPAID = 0;
+    // 支付中
+    PAYING = 1;
+    // 成功
+    SUCCESS = 2;
+    // 失败
+    FAIL = 3;
+    // 交易成功-发生退款
+    SUCCESS_REFUND = 4;
+    // 关闭
+    CLOSE = 5;
+}
+// 退款状态
+enum RefundState {
+    // 未申请
+    NONE = 0;
+    // 申请中
+    APPLY = 1;
+    // 退款中
+    ING = 2;
+    // 已退款
+    R_SUCCESS = 3;
+    // 退款失败
+    R_FAIL = 4;
+
+}
