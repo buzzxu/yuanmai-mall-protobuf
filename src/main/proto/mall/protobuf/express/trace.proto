@@ -1,5 +1,5 @@
 syntax = "proto3";
-package yuanmai.mall.protobuf.express;
+package mall.protobuf.express;
 
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";

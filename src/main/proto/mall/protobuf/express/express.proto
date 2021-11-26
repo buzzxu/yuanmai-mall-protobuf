@@ -1,5 +1,5 @@
 syntax = "proto3";
-package yuanmai.mall.protobuf.express;
+package mall.protobuf.express;
 
 option java_package = "com.yuanmai.protobuf.mall.express";
 option java_multiple_files = true;
