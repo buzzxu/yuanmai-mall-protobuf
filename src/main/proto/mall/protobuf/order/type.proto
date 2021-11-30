@@ -1,0 +1,49 @@
+syntax = "proto3";
+package mall.protobuf.order;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.order";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;order";
+
+
+enum OrderState{
+    // 待审核
+    WAIT_APPROVED = 0;
+    // 未付款
+    UNPAID = 1;
+    // 已付款
+    PAID = 2;
+    // 未发货
+    UNSHIPP = 3;
+    // 已发货
+    SHIPPED = 4;
+    // 发货中
+    SHIPPING = 5;
+    // 已签收
+    SIGNED = 6;
+    // 已完成
+    COMPLETE = 8;
+    // 取消交易
+    CANCEL = 9;
+    // 交易结束
+    END = 10;
+    // 退款
+    AFTERSALE_REFUND = 11;
+    // 换货、退货退款
+    AFTERSALE_RETURN = 12;
+}
+
+message ItemSpec{
+    string name = 1;
+    string code = 2;
+    repeated ItemSpecVal vals = 3;
+}
+
+message ItemSpecVal{
+    string name = 1;
+    string code = 2;
+    google.protobuf.Any value = 3;
+}

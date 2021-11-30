@@ -3,46 +3,107 @@ package mall.protobuf.order;
 
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
+import "mall/protobuf/order/type.proto";
+import "mall/protobuf/order/delivery.proto";
+import "mall/protobuf/product/type.proto";
+import "mall/protobuf/express/type.proto";
+import "mall/protobuf/aftersale/type.proto";
+import "mall/protobuf/pay/type.proto";
+import "mall/protobuf/settle/type.proto";
+
 
 option java_package = "com.yuanmai.protobuf.mall.order";
 option java_multiple_files = true;
 option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;order";
 
-enum OrderState{
-    // 待审核
-    WAIT_APPROVED = 0;
-    // 未付款
-    UNPAID = 1;
-    // 已付款
-    PAID = 2;
-    // 未发货
-    UNSHIPP = 3;
-    // 已发货
-    SHIPPED = 4;
-    // 发货中
-    SHIPPING = 5;
-    // 已签收
-    SIGNED = 6;
-    // 已完成
-    COMPLETE = 8;
-    // 取消交易
-    CANCEL = 9;
-    // 交易结束
-    END = 10;
-    // 退款
-    AFTERSALE_REFUND = 11;
-    // 换货、退货退款
-    AFTERSALE_RETURN = 12;
+
+// 主订单
+message Order{
+
 }
 
-message ItemSpec{
-    string name = 1;
-    string code = 2;
-    repeated ItemSpecVal vals = 3;
+//子订单
+message OrderInfo{
+    int64 id = 1;
+    int64 userId = 2;
+    string parentOrderNumber = 3;
+    string orderNumber = 4;
+    mall.protobuf.order.OrderState state = 5;
+    mall.protobuf.pay.PayState payState = 6;
+    mall.protobuf.pay.RefundState refundState = 7;
+    mall.protobuf.aftersale.AfterState afterState = 8;
+    int32 supplierId = 9;
+    int32 number = 10;
+    int32 shippedNumber = 11;
+    int64 totalAmount = 12;
+    int64 totalAmountCost = 13;
+    int64 fee = 14;
+    int64 payTotalAmount = 15;
+    int64 freeAmount = 16;
+    int64 settlAmount = 17;
+    int64 logisticsFee = 18;
+    int64 discount = 19;
+    int64 refundAmount = 20;
+    int32 integral = 21;
+    int64 addressId = 22;
+    string consignee =23;
+    string phone = 24;
+    string address = 25;
+    mall.protobuf.pay.PayChannel payChannel = 26;
+    string tradeNo = 27;
+    string outTradeNo = 28;
+    string refundNo =29;
+    string outRefundNo =30;
+    mall.protobuf.settle.SettlementStatus settlementState =31;
+    google.type.DateTime settlementTime = 32;
+    string remark =33;
+    string reason =34;
+    google.type.DateTime submitPayTime = 35;
+    google.type.DateTime submitRefundTime = 36;
+    google.type.DateTime payTime =37;
+    google.type.DateTime refundTime =38;
+    google.type.DateTime deliveryTime = 39;
+    google.type.DateTime signedTIme =40;
+    google.type.DateTime afterFinishTime =41;
+    google.type.DateTime endTime =42;
+    repeated OrderItem items = 43;
+    repeated mall.protobuf.order.OrderDelivery deliveries =44;
+    mall.protobuf.aftersale.AfterSaleOrderInfo afterSaleOrder = 45;
+    mall.protobuf.pay.PaymentMethod paymentMethod = 46;
+    mall.protobuf.settle.SettlementMethod settlMethod = 47;
+
 }
 
-message ItemSpecVal{
-    string name = 1;
-    string code = 2;
-    google.protobuf.Any value = 3;
+message OrderItem {
+    int64 id = 1;
+    string orderNumber = 2;
+    mall.protobuf.product.SpecType specType = 3;
+    mall.protobuf.aftersale.AfterState afterState = 4;
+    int32 supplierId = 5;
+    int32 categoryId = 6;
+    string category = 7;
+    int32 brandId = 8;
+    string brand = 9;
+    int64 productId = 10;
+    string productName = 11;
+    int64 skuId = 12;
+    string skuName = 13;
+    string sku = 14;
+    string barcode = 15;
+    string marque = 16;
+    string image = 17;
+    int32  number = 18;
+    int64 price = 19;
+    int64 priceCost = 20;
+    int64 amount = 21;
+    int64 amountCost = 22;
+    int64 discount= 23;
+    int32 integral = 24;
+    mall.protobuf.product.Units unit = 25;
+    string unitDesc = 26;
+    string outRefundNo = 27;
+    string refundNo = 28;
+    float volume = 29;
+    string remark =30;
+    repeated mall.protobuf.order.ItemSpec specs = 31;
 }

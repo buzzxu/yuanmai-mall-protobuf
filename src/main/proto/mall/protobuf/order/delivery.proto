@@ -3,10 +3,9 @@ package mall.protobuf.order;
 
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
-import "mall/protobuf/order/order.proto";
-import "mall/protobuf/product/product.proto";
-import "mall/protobuf/express/express.proto";
-import "mall/protobuf/express/trace.proto";
+import "mall/protobuf/order/type.proto";
+import "mall/protobuf/product/type.proto";
+import "mall/protobuf/express/type.proto";
 
 option java_package = "com.yuanmai.protobuf.mall.order";
 option java_multiple_files = true;

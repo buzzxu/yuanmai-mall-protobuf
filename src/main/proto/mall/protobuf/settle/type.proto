@@ -1,8 +1,6 @@
 syntax = "proto3";
 package mall.protobuf.settle;
 
-import "google/protobuf/any.proto";
-import "google/type/datetime.proto";
 option java_package = "com.yuanmai.protobuf.mall.settle";
 option java_multiple_files = true;
 option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;settle";
