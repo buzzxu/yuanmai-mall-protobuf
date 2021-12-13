@@ -1,6 +1,8 @@
 syntax = "proto3";
 package mall.protobuf.company;
 
+import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
 import "yuanmai/protobuf/pay/types.proto";
 
 option java_package = "com.yuanmai.protobuf.mall.company";
@@ -57,6 +59,17 @@ message Company {
   yuanmai.protobuf.pay.BankAccType bankType = 30;
   //备注
   string remark = 31;
+
+  string ext1 = 32;
+  string ext2 = 33;
+  string ext3 = 34;
+  map<string,google.protobuf.Any> ext4 = 35;
+  google.protobuf.ListValue ext5 = 36;
+  int32 ext6 = 37;
+  int32 ext7 = 38;
+  int32 ext8 = 39;
+  int32 ext9 = 40;
+  int32 ext10 = 41;
 }
 
 // 企业签约支付
