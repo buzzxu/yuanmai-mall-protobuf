@@ -3,8 +3,8 @@ package mall.protobuf.aftersale;
 
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
-import "mall/protobuf/order/type.proto";
-import "mall/protobuf/approval/type.proto";
+import "mall/protobuf/order/types.proto";
+import "mall/protobuf/approval/types.proto";
 
 option java_package = "com.yuanmai.protobuf.mall.aftersale";
 option java_multiple_files = true;

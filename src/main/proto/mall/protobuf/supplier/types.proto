@@ -1,0 +1,34 @@
+syntax = "proto3";
+package mall.protobuf.company;
+
+import "mall/protobuf/company/types.proto";
+import "mall/protobuf/supplier/warehouse.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.supplier";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;supplier";
+
+// 供货商信息
+message SupplierInfo {
+    int32 id = 1;
+    int32 companyId = 2;
+    int64 userId = 3;
+    string name =4;
+    mall.protobuf.company.Company company = 5;
+    SupplierStatus status = 6;
+    bool hasWarehouse = 7;
+    repeated mall.protobuf.supplier.WareConnect whConnect = 8;
+}
+
+//供货商状态
+enum SupplierStatus {
+    // 正常
+    NORAML = 0;
+    // 已签约
+    SIGNED = 1;
+    // 冻结
+    FREEZE = 2;
+    // 取消合作
+    CANCEL = 3;
+}
+

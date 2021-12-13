@@ -4,13 +4,13 @@ package mall.protobuf.order;
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
 import "yuanmai/protobuf/pay/types.proto";
-import "mall/protobuf/order/type.proto";
+import "mall/protobuf/order/types.proto";
 import "mall/protobuf/order/delivery.proto";
-import "mall/protobuf/product/type.proto";
-import "mall/protobuf/express/type.proto";
-import "mall/protobuf/aftersale/type.proto";
-import "mall/protobuf/pay/type.proto";
-import "mall/protobuf/settle/type.proto";
+import "mall/protobuf/product/types.proto";
+import "mall/protobuf/express/types.proto";
+import "mall/protobuf/aftersale/types.proto";
+import "mall/protobuf/pay/types.proto";
+import "mall/protobuf/settle/types.proto";
 
 
 option java_package = "com.yuanmai.protobuf.mall.order";

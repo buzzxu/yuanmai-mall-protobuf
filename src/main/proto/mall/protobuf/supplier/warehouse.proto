@@ -1,0 +1,28 @@
+syntax = "proto3";
+package mall.protobuf.supplier;
+
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.supplier";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;supplier";
+
+
+message WareConnect {
+    int32 id = 1;
+    WHConnectType type = 2;
+    string mark = 3;
+    string oauthCode = 4;
+    string key = 5;
+    string credential = 6;
+    google.type.DateTime time =7;
+    bool def = 8;
+}
+
+/**
+仓储链接类型
+ */
+enum WHConnectType{
+    NONE = 0;
+    YM = 1;
+}
