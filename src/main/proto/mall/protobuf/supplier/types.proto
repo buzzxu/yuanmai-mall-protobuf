@@ -1,5 +1,5 @@
 syntax = "proto3";
-package mall.protobuf.company;
+package mall.protobuf.supplier;
 
 import "mall/protobuf/company/types.proto";
 import "mall/protobuf/supplier/warehouse.proto";
