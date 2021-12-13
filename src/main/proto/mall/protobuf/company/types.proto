@@ -64,7 +64,7 @@ message Company {
   string ext2 = 33;
   string ext3 = 34;
   map<string,google.protobuf.Any> ext4 = 35;
-  google.protobuf.ListValue ext5 = 36;
+  google.protobuf.Any ext5 = 36;
   int32 ext6 = 37;
   int32 ext7 = 38;
   int32 ext8 = 39;
