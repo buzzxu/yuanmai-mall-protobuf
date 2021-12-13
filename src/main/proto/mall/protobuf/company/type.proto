@@ -1,0 +1,98 @@
+syntax = "proto3";
+package mall.protobuf.company;
+
+import "yuanmai/protobuf/pay/types.proto";
+
+option java_package = "com.yuanmai.protobuf.mall.company";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;company";
+
+// 企业信息
+message Company {
+  int32 id = 1;
+  string oauthId = 2;
+  OperatingBody type = 3;
+  string name = 4;
+  string logo = 5;
+  double rate = 6;
+  string unionCredit = 7;
+  string legalPerson = 8;
+  //法人身份证
+  string legalId = 9;
+  //联系电话
+  string legalPhone = 10;
+  //身份证正面
+  string idPhoto = 11;
+  //身份证背面
+  string idPhoto2 = 12;
+  string province = 13;
+  string provinceName = 14;
+  string city = 15;
+  string cityName = 16;
+  string county = 17;
+  string countyName = 18;
+  //详细地址
+  string address = 19;
+  //负责人
+  string principal = 20;
+  //负责人电话
+  string principalPhone = 21;
+  //经营范围
+  string businessLicense = 22;
+  //营业执照
+  string businessLicensePic = 23;
+  //支付合同
+  CompanySignPayContract payContract = 24;
+  //银行名称
+  string bank = 25;
+  //银行编码
+  string bankCode = 26;
+  //银行联行号
+  string cnaps = 27;
+  //介绍
+  string introduce = 28;
+  // 银行卡号
+  string bankCard = 29;
+  //银行卡类型 0=私户 1=公户
+  yuanmai.protobuf.pay.BankAccType bankType = 30;
+  //备注
+  string remark = 31;
+}
+
+// 企业签约支付
+message CompanySignPayContract{
+  // 签约企业名称
+  string name = 1;
+  // 是否已签约 0=未签约 1=签约中 2=已签约 3=签约失败
+  int32 sign = 2;
+  // 认证 0=未认证 1=认证中 2=已审核 3=认证失败
+  int32 verified = 3;
+  // 合同编号
+  string contractNo = 4;
+  // 对公账户
+  string bankPublicNo = 5;
+  // 开户行
+  string bankName = 6;
+  // 支行名称
+  string branchName = 7;
+  // 联行号
+  string cnaps = 8;
+  // 签约时间
+  string time = 9;
+  // 备注
+  string remark = 10;
+  // 绑定的手机号
+  string phone = 11;
+  // 签约失败原因
+  string reason = 12;
+}
+// 企业主体类型
+enum OperatingBody{
+    //公司
+    COMPANY = 0;
+    //个人
+    PERSONAL = 1;
+    //未知
+    UNKNOWN = -1;
+
+}

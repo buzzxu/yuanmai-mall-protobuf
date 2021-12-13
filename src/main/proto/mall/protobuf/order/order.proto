@@ -3,6 +3,7 @@ package mall.protobuf.order;
 
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
+import "yuanmai/protobuf/pay/types.proto";
 import "mall/protobuf/order/type.proto";
 import "mall/protobuf/order/delivery.proto";
 import "mall/protobuf/product/type.proto";
@@ -29,8 +30,8 @@ message OrderInfo{
     string parentOrderNumber = 3;
     string orderNumber = 4;
     mall.protobuf.order.OrderState state = 5;
-    mall.protobuf.pay.PayState payState = 6;
-    mall.protobuf.pay.RefundState refundState = 7;
+    yuanmai.protobuf.pay.PayState payState = 6;
+    yuanmai.protobuf.pay.RefundState refundState = 7;
     mall.protobuf.aftersale.AfterState afterState = 8;
     int32 supplierId = 9;
     int32 number = 10;
@@ -49,7 +50,7 @@ message OrderInfo{
     string consignee =23;
     string phone = 24;
     string address = 25;
-    mall.protobuf.pay.PayChannel payChannel = 26;
+    yuanmai.protobuf.pay.PayChannel payChannel = 26;
     string tradeNo = 27;
     string outTradeNo = 28;
     string refundNo =29;
@@ -69,7 +70,7 @@ message OrderInfo{
     repeated OrderItem items = 43;
     repeated mall.protobuf.order.OrderDelivery deliveries =44;
     mall.protobuf.aftersale.AfterSaleOrderInfo afterSaleOrder = 45;
-    mall.protobuf.pay.PaymentMethod paymentMethod = 46;
+    yuanmai.protobuf.pay.PaymentMethod paymentMethod = 46;
     mall.protobuf.settle.SettlementMethod settlMethod = 47;
 
 }
