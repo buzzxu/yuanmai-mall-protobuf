@@ -34,6 +34,12 @@ enum OrderState{
     AFTERSALE_REFUND = 11;
     // 换货、退货退款
     AFTERSALE_RETURN = 12;
+    // 等待出库
+    STORAGE_OUT_WAIT = 21;
+    // 已出库
+    STORAGE_OUT = 22;
+    // 入库
+    STORAGE_IN = 23;
 }
 
 message ItemSpec{
