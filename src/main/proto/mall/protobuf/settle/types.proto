@@ -25,6 +25,8 @@ enum SettlementMethod{
     DAYS_90 = 7;
     // 季结
     SEASON = 8;
+    // 3日结
+    DAYS_3 = 9;
 }
 // 结算状态
 enum SettlementStatus{
