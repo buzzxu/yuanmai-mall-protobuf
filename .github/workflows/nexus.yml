@@ -1,9 +1,9 @@
-name: Publish to Nexus
+name: Publish release to Nexus
 
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [ published ]
+
 env:
   groupId: com.yuanmai.protobuf
   artifactId: yuanmai-mall-java
