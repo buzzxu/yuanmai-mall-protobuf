@@ -4,8 +4,10 @@ import com.yuanmai.b2c.objects.order.ItemSpec;
 import com.yuanmai.b2c.objects.order.ItemSpecVal;
 import com.yuanmai.b2c.objects.order.OrderDelivery;
 import com.yuanmai.b2c.objects.order.OrderItemMini;
+import com.yuanmai.mall.objects.product.SpecType;
 import com.yuanmai.mall.objects.product.Units;
 import com.yuanmai.thirdparty.express.ExpressState;
+import com.yuanmai.thirdparty.express.datas.TracesInfo;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
@@ -47,14 +49,23 @@ public interface ProtobufToMall {
         }
         return val;
     }
+    @Mappings({
+            @Mapping(target = "tracks",source = "tracksList")
+    })
+    TracesInfo to(com.yuanmai.protobuf.mall.express.TracesInfo obj);
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWN",source = "UNRECOGNIZED")
+            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
     })
     Units to(com.yuanmai.protobuf.mall.product.Units obj);
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWS",source = "UNRECOGNIZED")
+            @ValueMapping(target = "UNKNOWS",source = "UNKNOWS")
     })
     ExpressState to(com.yuanmai.protobuf.mall.express.ExpressState obj);
+
+    @ValueMappings({
+            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
+    })
+    SpecType to(com.yuanmai.protobuf.mall.product.SpecType obj);
 }

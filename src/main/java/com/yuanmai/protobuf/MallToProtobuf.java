@@ -1,7 +1,22 @@
 package com.yuanmai.protobuf;
 
+import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.yuanmai.b2c.objects.order.ItemSpec;
+import com.yuanmai.b2c.objects.order.ItemSpecVal;
+import com.yuanmai.b2c.objects.order.OrderDelivery;
+import com.yuanmai.b2c.objects.order.OrderItemMini;
+import com.yuanmai.mall.objects.product.SpecType;
+import com.yuanmai.mall.objects.product.Units;
+import com.yuanmai.thirdparty.express.ExpressState;
+import com.yuanmai.thirdparty.express.datas.Trace;
+import com.yuanmai.thirdparty.express.datas.TracesInfo;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
+
+import java.util.List;
+import java.util.List;
 
 import static org.mapstruct.CollectionMappingStrategy.ADDER_PREFERRED;
 
@@ -12,4 +27,56 @@ import static org.mapstruct.CollectionMappingStrategy.ADDER_PREFERRED;
         ,nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface MallToProtobuf {
     MallToProtobuf INSTANCE = Mappers.getMapper(MallToProtobuf.class);
+
+    List<com.yuanmai.protobuf.mall.order.OrderDelivery> toDeliveres(List<OrderDelivery> objs);
+    @Mappings({
+            @Mapping(target = "itemIdsList",source = "itemIds"),
+            @Mapping(target = "itemsList",source = "items")
+    })
+    com.yuanmai.protobuf.mall.order.OrderDelivery to(com.yuanmai.b2c.objects.order.OrderDelivery obj);
+    @Mappings({
+            @Mapping(target = "specsList",source = "specs")
+    })
+    com.yuanmai.protobuf.mall.order.OrderItemMini to(OrderItemMini obj);
+
+    @Mappings({
+            @Mapping(target = "valsList",source = "vals")
+    })
+    com.yuanmai.protobuf.mall.order.ItemSpec to(ItemSpec obj);
+
+    default com.yuanmai.protobuf.mall.order.ItemSpecVal to(ItemSpecVal obj){
+        com.yuanmai.protobuf.mall.order.ItemSpecVal.Builder val = com.yuanmai.protobuf.mall.order.ItemSpecVal.newBuilder();
+        val.setCode(obj.getCode());
+        val.setName(obj.getName());
+        if(obj.getValue() != null){
+            try {
+                val.setValue(Any.parseFrom(ByteString.copyFromUtf8(obj.getValue().toString())));
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+        }
+        return val.build();
+    }
+
+    @Mappings({
+            @Mapping(target = "tracksList",source = "tracks")
+    })
+    com.yuanmai.protobuf.mall.express.TracesInfo to(TracesInfo obj);
+
+
+
+    @ValueMappings({
+            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
+    })
+    com.yuanmai.protobuf.mall.product.Units to(Units obj);
+
+    @ValueMappings({
+            @ValueMapping(target = "UNKNOWS",source = "UNKNOWS")
+    })
+    com.yuanmai.protobuf.mall.express.ExpressState to(ExpressState obj);
+
+    @ValueMappings({
+            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
+    })
+    com.yuanmai.protobuf.mall.product.SpecType to(SpecType obj);
 }

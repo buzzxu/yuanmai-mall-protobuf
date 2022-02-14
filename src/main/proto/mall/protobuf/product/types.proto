@@ -195,6 +195,8 @@ enum SpecType{
     GENERAL = 0;
     //    多规格
     MULTIPLE = 1;
+
+    UNKNOWN = 2;
 }
 // 单位
 enum Units{
@@ -252,4 +254,6 @@ enum Units{
     PF = 25;
 //    m³
     LF = 26;
+//    未知
+    UNKNOWN = 27;
 }
