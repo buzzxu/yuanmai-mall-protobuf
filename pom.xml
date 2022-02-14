@@ -13,6 +13,8 @@
         <grpc.version>1.44.0</grpc.version>
         <protobuf.version>3.19.4</protobuf.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <yuanmai.version>22.0-SNAPSHOT</yuanmai.version>
+        <yuanmai.b2c.version>22.0-SNAPSHOT</yuanmai.b2c.version>
     </properties>
     <repositories>
         <repository>
@@ -57,6 +59,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.yuanmai.b2c</groupId>
+                <artifactId>yuanmai-b2c-bom</artifactId>
+                <version>${yuanmai.b2c.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -85,6 +94,14 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yuanmai</groupId>
+            <artifactId>yuanmai-thirdparty</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.yuanmai.b2c</groupId>
+            <artifactId>yuanmai-b2c-objects</artifactId>
         </dependency>
     </dependencies>
 

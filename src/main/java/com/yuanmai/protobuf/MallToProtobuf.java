@@ -1,6 +1,7 @@
 package com.yuanmai.protobuf;
 
 import org.mapstruct.*;
+import org.mapstruct.factory.Mappers;
 
 import static org.mapstruct.CollectionMappingStrategy.ADDER_PREFERRED;
 
@@ -9,5 +10,6 @@ import static org.mapstruct.CollectionMappingStrategy.ADDER_PREFERRED;
         ,unmappedTargetPolicy = ReportingPolicy.IGNORE
         ,nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL
         ,nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-public interface MallMapStructs {
+public interface MallToProtobuf {
+    MallToProtobuf INSTANCE = Mappers.getMapper(MallToProtobuf.class);
 }
