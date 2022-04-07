@@ -1,9 +1,9 @@
 package com.yuanmai.protobuf;
 
-import com.yuanmai.b2c.objects.order.ItemSpec;
-import com.yuanmai.b2c.objects.order.ItemSpecVal;
-import com.yuanmai.b2c.objects.order.OrderDelivery;
-import com.yuanmai.b2c.objects.order.OrderItemMini;
+import com.yuanmai.mall.objects.order.ItemSpec;
+import com.yuanmai.mall.objects.order.ItemSpecVal;
+import com.yuanmai.mall.objects.order.OrderDelivery;
+import com.yuanmai.mall.objects.order.OrderItemMini;
 import com.yuanmai.mall.objects.product.SpecType;
 import com.yuanmai.mall.objects.product.Units;
 import com.yuanmai.thirdparty.express.ExpressState;

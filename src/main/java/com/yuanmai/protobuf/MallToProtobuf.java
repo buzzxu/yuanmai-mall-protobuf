@@ -3,10 +3,10 @@ package com.yuanmai.protobuf;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-import com.yuanmai.b2c.objects.order.ItemSpec;
-import com.yuanmai.b2c.objects.order.ItemSpecVal;
-import com.yuanmai.b2c.objects.order.OrderDelivery;
-import com.yuanmai.b2c.objects.order.OrderItemMini;
+import com.yuanmai.mall.objects.order.ItemSpec;
+import com.yuanmai.mall.objects.order.ItemSpecVal;
+import com.yuanmai.mall.objects.order.OrderDelivery;
+import com.yuanmai.mall.objects.order.OrderItemMini;
 import com.yuanmai.mall.objects.product.SpecType;
 import com.yuanmai.mall.objects.product.Units;
 import com.yuanmai.thirdparty.express.ExpressState;
@@ -33,7 +33,7 @@ public interface MallToProtobuf {
             @Mapping(target = "itemIdsList",source = "itemIds"),
             @Mapping(target = "itemsList",source = "items")
     })
-    com.yuanmai.protobuf.mall.order.OrderDelivery to(com.yuanmai.b2c.objects.order.OrderDelivery obj);
+    com.yuanmai.protobuf.mall.order.OrderDelivery to(com.yuanmai.mall.objects.order.OrderDelivery obj);
     @Mappings({
             @Mapping(target = "specsList",source = "specs")
     })
