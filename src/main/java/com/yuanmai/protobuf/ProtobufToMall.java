@@ -55,17 +55,17 @@ public interface ProtobufToMall {
     TracesInfo to(com.yuanmai.protobuf.mall.express.TracesInfo obj);
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
+            @ValueMapping(target = "UNKNOWN",source = "UNRECOGNIZED")
     })
     Units to(com.yuanmai.protobuf.mall.product.Units obj);
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWS",source = "UNKNOWS")
+            @ValueMapping(target = "UNKNOWS",source = "UNRECOGNIZED")
     })
     ExpressState to(com.yuanmai.protobuf.mall.express.ExpressState obj);
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
+            @ValueMapping(target = "UNKNOWN",source = "UNRECOGNIZED")
     })
     SpecType to(com.yuanmai.protobuf.mall.product.SpecType obj);
 }

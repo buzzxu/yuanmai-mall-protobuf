@@ -145,10 +145,18 @@ message SpecVal{
 
 //商品状态
 enum GoodsStatus{
+    //未提交
     NONE = 0;
-    UP = 1;
+    //审核中
+    AUDITING = 1;
+    //待上架
     READY_UP = 2;
-    DOWN = -1;
+    //未通过
+    REJECT = 3;
+    //上架
+    UP = 4;
+    //下架
+    DOWN = 5;
 }
 //商品类型
 enum GoodsType{
@@ -195,8 +203,6 @@ enum SpecType{
     GENERAL = 0;
     //    多规格
     MULTIPLE = 1;
-
-    UNKNOWN = 2;
 }
 // 单位
 enum Units{
@@ -254,6 +260,4 @@ enum Units{
     PF = 25;
 //    m³
     LF = 26;
-//    未知
-    UNKNOWN = 27;
 }

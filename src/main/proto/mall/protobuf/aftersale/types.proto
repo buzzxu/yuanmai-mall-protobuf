@@ -83,5 +83,5 @@ enum AfterState{
     // 处理完毕
     FINISH = 3;
     // 售后已取消
-    CANCEL = -1;
+    CANCEL = 4;
 }

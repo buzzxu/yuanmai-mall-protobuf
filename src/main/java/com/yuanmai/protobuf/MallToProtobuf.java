@@ -66,17 +66,17 @@ public interface MallToProtobuf {
 
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
+            @ValueMapping(target = "UNRECOGNIZED",source = "UNKNOWN")
     })
     com.yuanmai.protobuf.mall.product.Units to(Units obj);
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWS",source = "UNKNOWS")
+            @ValueMapping(target = "UNRECOGNIZED",source = "UNKNOWS")
     })
     com.yuanmai.protobuf.mall.express.ExpressState to(ExpressState obj);
 
     @ValueMappings({
-            @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
+            @ValueMapping(target = "UNRECOGNIZED",source = "UNKNOWN")
     })
     com.yuanmai.protobuf.mall.product.SpecType to(SpecType obj);
 
