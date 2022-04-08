@@ -79,4 +79,5 @@ public interface MallToProtobuf {
             @ValueMapping(target = "UNKNOWN",source = "UNKNOWN")
     })
     com.yuanmai.protobuf.mall.product.SpecType to(SpecType obj);
+
 }
