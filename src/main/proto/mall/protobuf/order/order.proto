@@ -72,6 +72,13 @@ message OrderInfo{
     mall.protobuf.aftersale.AfterSaleOrderInfo afterSaleOrder = 45;
     yuanmai.protobuf.pay.PaymentMethod paymentMethod = 46;
     mall.protobuf.settle.SettlementMethod settlMethod = 47;
+    int64 payerId = 48;
+    string payer = 49;
+    bool fapiao = 50;
+    int64 billId = 51;
+    string billingCycle = 52;
+    int32 afterSaleCount = 53;
+    bool aftersaleApplyEnable = 54;
 
 }
 
@@ -107,4 +114,5 @@ message OrderItem {
     float volume = 29;
     string remark =30;
     repeated mall.protobuf.order.ItemSpec specs = 31;
+    int64 refundAmount =32;
 }
