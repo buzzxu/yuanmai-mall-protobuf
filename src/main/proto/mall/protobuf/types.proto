@@ -1,0 +1,24 @@
+syntax = "proto3";
+package mall.protobuf;
+
+import "google/protobuf/any.proto";
+import "google/type/datetime.proto";
+
+option java_package = "com.yuanmai.protobuf.mall";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;types";
+
+message Commodity{
+    int64 id = 1;
+    string name =2;
+    string code = 3;
+    int64 price = 4;
+    int64 amount = 5;
+    string desc = 6;
+    double volume = 7;
+    int32 number = 8;
+    string image = 9;
+    string unit = 10;
+    repeated string specs = 11;
+}
+

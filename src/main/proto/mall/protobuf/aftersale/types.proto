@@ -3,6 +3,7 @@ package mall.protobuf.aftersale;
 
 import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
+import "mall/protobuf/types.proto";
 import "mall/protobuf/order/types.proto";
 import "mall/protobuf/approval/types.proto";
 
@@ -63,6 +64,30 @@ message AfterSaleOrderItem{
     int64 price = 6;
     string image = 7;
     repeated string paths = 8;
+}
+
+//售后雷士
+message AfterSaleHistory{
+    int64 id = 1;
+    int64 objId = 2;
+    string parentOrderNumber = 3;
+    string orderNumber = 4;
+    int64 amount = 5;
+    AfterSaleType type = 6;
+    string typeText = 7;
+    AfterState afterState = 8;
+    string afterStateText = 9;
+    approval.ApprovalStatus approvalState = 10;
+    string approvalStateText = 11;
+    int64 applicantId = 12;
+    string applicant = 13;
+    int64 operatorId = 14;
+    string operator = 15;
+    repeated Commodity commodity = 16;
+    string remark = 17;
+    string applyReason = 18;
+    string approvalReason = 19;
+    int32 counter = 20;
 }
 enum AfterSaleType {
     // 退款

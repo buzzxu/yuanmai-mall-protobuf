@@ -3,6 +3,7 @@ package com.yuanmai.protobuf;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.yuanmai.mall.objects.Commodity;
 import com.yuanmai.mall.objects.order.ItemSpec;
 import com.yuanmai.mall.objects.order.ItemSpecVal;
 import com.yuanmai.mall.objects.order.OrderDelivery;
@@ -80,4 +81,9 @@ public interface MallToProtobuf {
     })
     com.yuanmai.protobuf.mall.product.SpecType to(SpecType obj);
 
+
+    @Mappings({
+            @Mapping(target = "specsList",source = "specs")
+    })
+    com.yuanmai.protobuf.mall.Commodity to(Commodity obj);
 }

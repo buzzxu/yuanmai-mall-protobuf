@@ -1,5 +1,6 @@
 package com.yuanmai.protobuf;
 
+import com.yuanmai.mall.objects.Commodity;
 import com.yuanmai.mall.objects.order.ItemSpec;
 import com.yuanmai.mall.objects.order.ItemSpecVal;
 import com.yuanmai.mall.objects.order.OrderDelivery;
@@ -68,4 +69,9 @@ public interface ProtobufToMall {
             @ValueMapping(target = "UNKNOWN",source = "UNRECOGNIZED")
     })
     SpecType to(com.yuanmai.protobuf.mall.product.SpecType obj);
+
+    @Mappings({
+            @Mapping(target = "specs", source = "specsList")
+    })
+    Commodity to(com.yuanmai.protobuf.mall.Commodity obj);
 }
