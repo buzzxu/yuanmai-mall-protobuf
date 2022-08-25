@@ -49,6 +49,8 @@ message AfterSaleOrderInfo {
     string operator = 18;
     // 售后商品
     repeated AfterSaleOrderItem items = 19;
+
+    string address =20;
 }
 
 
@@ -92,10 +94,13 @@ message AfterSaleHistory{
 enum AfterSaleType {
     // 退款
     REFUND = 0;
-    // 退货退款
-    RETURN = 1;
     // 换货
-    EXCHANGE = 2;
+    EXCHANGE = 1;
+    //更换地址
+    ADDRESS = 2;
+    // 退货退款
+    RETURN = 3;
+
 }
 // 售后状态
 enum AfterState{
