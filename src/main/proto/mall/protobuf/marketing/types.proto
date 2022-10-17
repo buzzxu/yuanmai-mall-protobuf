@@ -1,0 +1,32 @@
+syntax = "proto3";
+package mall.protobuf.marketing;
+
+option java_package = "com.yuanmai.protobuf.mall.marketing";
+option java_multiple_files = true;
+option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;marketing";
+
+//营销类型
+enum MarketingType{
+    // 无
+    NONE = 0;
+    //预售
+    PRE_SALE = 1;
+    //团购
+    GROUP_BUY = 2;
+    //限时秒杀
+    FLASH_SALE = 3;
+}
+
+//预售状态
+enum PreSaleStatus{
+    //未开始
+    WAITING = 0;
+    //进行中
+    ING = 1;
+    //成功
+    SUCCESS = 2;
+    //失败
+    FAIL = 3;
+    //已取消
+    CANCEL = 4;
+}

@@ -17,8 +17,6 @@ enum ExpressState {
     SIGNED = 3;
     //问题件
     PROBLEMS = 4;
-    //未知
-    UNKNOWS =5;
 }
 
 // 物流跟踪信息
