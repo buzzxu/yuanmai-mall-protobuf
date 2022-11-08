@@ -39,6 +39,8 @@ enum OrderState{
     STORAGE_OUT = 22;
     // 入库
     STORAGE_IN = 23;
+    //客户待审核
+    CUST_PENDING_APPROVAL = 30;
 }
 
 message ItemSpec{
