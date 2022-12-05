@@ -33,6 +33,8 @@ enum OrderState{
     AFTERSALE_REFUND = 11;
     // 换货、退货退款
     AFTERSALE_RETURN = 12;
+    // 更换地址
+    AFTERSALE_ADDRESS = 13;
     // 等待出库
     STORAGE_OUT_WAIT = 21;
     // 已出库
