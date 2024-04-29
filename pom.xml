@@ -18,8 +18,8 @@
     </properties>
     <repositories>
         <repository>
-            <id>ym-nexus</id>
-            <url>https://nexus.xingchenga.xyz/repository/maven-public/</url>
+            <id>fucksky-yuanmai-public</id>
+            <url>https://fucksky-maven.pkg.coding.net/repository/yuanmai/public/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <!--always daily interval:XXX-->
@@ -35,12 +35,12 @@
     </repositories>
     <distributionManagement>
         <repository>
-            <id>ym-nexus</id>
-            <url>https://nexus.xingchenga.xyz/repository/maven-releases/</url>
+            <id>yuanmai</id>
+            <url>https://packages.aliyun.com/maven/repository/2003547-release-AmXxfp</url>
         </repository>
         <snapshotRepository>
-            <id>ym-nexus</id>
-            <url>https://nexus.xingchenga.xyz/repository/maven-snapshots/</url>
+            <id>yuanmai</id>
+            <url>https://packages.aliyun.com/maven/repository/2003547-snapshot-xxdKnz</url>
         </snapshotRepository>
     </distributionManagement>
     <dependencyManagement>
