@@ -18,7 +18,7 @@ enum OrderState{
     // 未发货
     UNSHIPP = 3;
     // 已发货
-    SHIPPED = 4;
+    SHIPPED_PARTIALLY = 4;
     // 发货中
     SHIPPING = 5;
     // 已签收
