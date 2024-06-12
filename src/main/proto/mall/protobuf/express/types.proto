@@ -9,7 +9,7 @@ option go_package = "github.com/buzzxu/yuanmai-mall-protobuf-go;express";
 enum ExpressState {
     //未发货
     UNSHIPPED = 0;
-    //已发货
+    //已揽收
     SHIPPED = 1;
     //在途中
     ONWAY = 2;
@@ -21,6 +21,10 @@ enum ExpressState {
     DISPATCH = 5;
     //退回
     RETURN = 6;
+    //退签
+    REJECT = 20;
+    //取消
+    CANCEL = 99;
 }
 
 // 物流跟踪信息
