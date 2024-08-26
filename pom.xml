@@ -6,15 +6,15 @@
 
     <groupId>com.yuanmai.protobuf</groupId>
     <artifactId>yuanmai-mall-java</artifactId>
-    <version>24.0-SNAPSHOT</version>
+    <version>24.0</version>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <grpc.version>1.57.2</grpc.version>
         <protobuf.version>3.24.2</protobuf.version>
-        <mapstruct.version>1.5.5.Final</mapstruct.version>
-        <yuanmai.version>24.0-SNAPSHOT</yuanmai.version>
-        <yuanmai.b2c.version>24.0-SNAPSHOT</yuanmai.b2c.version>
+        <mapstruct.version>1.6.0</mapstruct.version>
+        <yuanmai.version>24.0</yuanmai.version>
+        <yuanmai.b2c.version>24.0</yuanmai.b2c.version>
     </properties>
     <repositories>
         <repository>
