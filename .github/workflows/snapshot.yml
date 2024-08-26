@@ -2,7 +2,7 @@ name: Publish snapshot to Nexus
 
 on:
   push:
-    branches: [ release/24.0 ]
+    branches: [ release/24.1 ]
 
 env:
   groupId: com.yuanmai.protobuf
@@ -15,7 +15,7 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
         with:
-          ref: 'snapshot'
+          ref: 'release/24.1'
 
       - name: Install Java and Maven
         uses: actions/setup-java@v4
