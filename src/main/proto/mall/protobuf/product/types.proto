@@ -260,4 +260,6 @@ enum Units{
     PF = 25;
 //    m³
     LF = 26;
+    // 项
+    ITEM = 27;
 }
