@@ -18,8 +18,8 @@
     </properties>
     <repositories>
         <repository>
-            <id>fucksky-yuanmai-public</id>
-            <url>https://fucksky-maven.pkg.coding.net/repository/yuanmai/public/</url>
+            <id>fucksky-yuanmai-repo</id>
+            <url>https://maven.cnb.cool/fucksky/yuanmai-repo/-/packages/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <!--always daily interval:XXX-->
@@ -42,6 +42,12 @@
             <id>rdc-snapshots</id>
             <url>https://packages.aliyun.com/maven/repository/2003547-snapshot-xxdKnz</url>
         </snapshotRepository>
+        <!--<repository>
+            &lt;!&ndash; 须与 settings.xml 中 server 的 id 一致 &ndash;&gt;
+            <id>fucksky-yuanmai-repo</id>
+            <name>fucksky-yuanmai-repo</name>
+            <url>https://maven.cnb.cool/fucksky/yuanmai-repo/-/packages/</url>
+        </repository>-->
     </distributionManagement>
     <dependencyManagement>
         <dependencies>
