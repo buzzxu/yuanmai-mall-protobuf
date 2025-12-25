@@ -13,5 +13,10 @@
             <username>5ec3a40e2430b0ce44e8ef73</username>
             <password>${password}</password>
         </server>
+        <server>
+            <id>fucksky-yuanmai-repo</id>
+            <username>cnb</username>
+            <password>aReF3w7ZsUf147eTaFJ05KHmSyI</password>
+        </server>
     </servers>
 </settings>
