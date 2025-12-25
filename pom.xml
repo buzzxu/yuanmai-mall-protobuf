@@ -18,19 +18,24 @@
     </properties>
     <repositories>
         <repository>
-            <id>fucksky-yuanmai-public</id>
-            <url>https://fucksky-maven.pkg.coding.net/repository/yuanmai/public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <!--always daily interval:XXX-->
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-            </snapshots>
+            <id>2003547-release-AmXxfp</id>
+            <url>https://packages.aliyun.com/5ec3a7b3d1d1abe63b55c37b/maven/2003547-release-amxxfp</url>
             <releases>
                 <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
             </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>2003547-snapshot-xxdKnz</id>
+            <url>https://packages.aliyun.com/5ec3a7b3d1d1abe63b55c37b/maven/2003547-snapshot-xxdknz</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
     <distributionManagement>

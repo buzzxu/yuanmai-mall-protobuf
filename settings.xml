@@ -4,12 +4,12 @@
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>rdc-releases</id>
+            <id>2003547-release-AmXxfp</id>
             <username>5ec3a40e2430b0ce44e8ef73</username>
             <password>${password}</password>
         </server>
         <server>
-            <id>rdc-snapshots</id>
+            <id>2003547-snapshot-xxdKnz</id>
             <username>5ec3a40e2430b0ce44e8ef73</username>
             <password>${password}</password>
         </server>
