@@ -1,3 +1,6 @@
 # Project exclude paths
 /target/
 .idea
+
+# protobuf 自动生成的代码
+src/main/java/
