@@ -4,35 +4,19 @@
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>rdc-releases</id>
+            <id>2003547-release-AmXxfp</id>
             <username>5ec3a40e2430b0ce44e8ef73</username>
             <password>${password}</password>
         </server>
         <server>
-            <id>rdc-snapshots</id>
+            <id>2003547-snapshot-xxdKnz</id>
             <username>5ec3a40e2430b0ce44e8ef73</username>
             <password>${password}</password>
         </server>
         <server>
             <id>fucksky-yuanmai-repo</id>
             <username>cnb</username>
-            <!-- 请替换为您的访问令牌 -->
-            <password>${CNB_TOKEN}</password>
+            <password>aReF3w7ZsUf147eTaFJ05KHmSyI</password>
         </server>
     </servers>
-    <profiles>
-        <profile>
-            <id>fucksky-yuanmai-repo-profile</id>
-            <repositories>
-                <repository>
-                    <!-- 须与 server 的 id 一致 -->
-                    <id>fucksky-yuanmai-repo</id>
-                    <url>https://maven.cnb.cool/fucksky/yuanmai-repo/-/packages/</url>
-                </repository>
-            </repositories>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
 </settings>
