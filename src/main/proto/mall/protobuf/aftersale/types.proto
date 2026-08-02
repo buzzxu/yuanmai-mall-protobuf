@@ -5,6 +5,7 @@ import "google/protobuf/any.proto";
 import "google/type/datetime.proto";
 import "mall/protobuf/types.proto";
 import "mall/protobuf/order/types.proto";
+import "mall/protobuf/product/types.proto";
 import "mall/protobuf/approval/types.proto";
 
 option java_package = "com.yuanmai.protobuf.mall.aftersale";
@@ -66,6 +67,9 @@ message AfterSaleOrderItem{
     int64 price = 6;
     string image = 7;
     repeated string paths = 8;
+    mall.protobuf.product.Units unit = 9;
+    mall.protobuf.product.ProductUnitType unitType = 10;
+    string unitDesc = 11;
 }
 
 //售后雷士

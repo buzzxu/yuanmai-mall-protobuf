@@ -42,47 +42,50 @@ public final class Types {
       "all.protobuf.aftersale\032\031google/protobuf/" +
       "any.proto\032\032google/type/datetime.proto\032\031m" +
       "all/protobuf/types.proto\032\037mall/protobuf/" +
-      "order/types.proto\032\"mall/protobuf/approva" +
-      "l/types.proto\"\327\004\n\022AfterSaleOrderInfo\022\n\n\002" +
-      "id\030\001 \001(\003\022\022\n\nsupplierId\030\002 \001(\005\022\022\n\napproval" +
-      "Id\030\003 \001(\003\022\023\n\013orderNumber\030\004 \001(\t\022\031\n\021parentO" +
-      "rderNumber\030\005 \001(\t\022\025\n\roriginOrderId\030\006 \001(\003\022" +
-      "\031\n\021originOrderNumber\030\007 \001(\t\0224\n\004type\030\010 \001(\016" +
-      "2&.mall.protobuf.aftersale.AfterSaleType" +
-      "\0222\n\005state\030\t \001(\0162#.mall.protobuf.aftersal" +
-      "e.AfterState\0227\n\016temporaryState\030\n \001(\0162\037.m" +
-      "all.protobuf.order.OrderState\022=\n\rapprova" +
-      "lState\030\013 \001(\0162&.mall.protobuf.approval.Ap" +
-      "provalStatus\022\016\n\006amount\030\014 \001(\003\022\021\n\tpayAmoun" +
-      "t\030\r \001(\003\022\016\n\006reason\030\016 \001(\005\022\023\n\013description\030\017" +
-      " \001(\t\022\016\n\006remark\030\020 \001(\t\022\022\n\noperatorId\030\021 \001(\003" +
-      "\022\020\n\010operator\030\022 \001(\t\022:\n\005items\030\023 \003(\0132+.mall" +
-      ".protobuf.aftersale.AfterSaleOrderItem\022\017" +
-      "\n\007address\030\024 \001(\t\"\225\001\n\022AfterSaleOrderItem\022\n" +
-      "\n\002id\030\001 \001(\003\022\023\n\013productName\030\002 \001(\t\022\016\n\006numbe" +
-      "r\030\003 \001(\005\022\016\n\006amount\030\004 \001(\003\022\021\n\tpayAmount\030\005 \001" +
-      "(\003\022\r\n\005price\030\006 \001(\003\022\r\n\005image\030\007 \001(\t\022\r\n\005path" +
-      "s\030\010 \003(\t\"\251\004\n\020AfterSaleHistory\022\n\n\002id\030\001 \001(\003" +
-      "\022\r\n\005objId\030\002 \001(\003\022\031\n\021parentOrderNumber\030\003 \001" +
-      "(\t\022\023\n\013orderNumber\030\004 \001(\t\022\016\n\006amount\030\005 \001(\003\022" +
-      "4\n\004type\030\006 \001(\0162&.mall.protobuf.aftersale." +
-      "AfterSaleType\022\020\n\010typeText\030\007 \001(\t\0227\n\nafter" +
-      "State\030\010 \001(\0162#.mall.protobuf.aftersale.Af" +
-      "terState\022\026\n\016afterStateText\030\t \001(\t\022=\n\rappr" +
-      "ovalState\030\n \001(\0162&.mall.protobuf.approval" +
-      ".ApprovalStatus\022\031\n\021approvalStateText\030\013 \001" +
-      "(\t\022\023\n\013applicantId\030\014 \001(\003\022\021\n\tapplicant\030\r \001" +
-      "(\t\022\022\n\noperatorId\030\016 \001(\003\022\020\n\010operator\030\017 \001(\t" +
-      "\022+\n\tcommodity\030\020 \003(\0132\030.mall.protobuf.Comm" +
-      "odity\022\016\n\006remark\030\021 \001(\t\022\023\n\013applyReason\030\022 \001" +
-      "(\t\022\026\n\016approvalReason\030\023 \001(\t\022\017\n\007counter\030\024 " +
-      "\001(\005*B\n\rAfterSaleType\022\n\n\006REFUND\020\000\022\014\n\010EXCH" +
-      "ANGE\020\001\022\013\n\007ADDRESS\020\002\022\n\n\006RETURN\020\003*B\n\nAfter" +
-      "State\022\010\n\004NONE\020\000\022\t\n\005APPLY\020\002\022\007\n\003ING\020\001\022\n\n\006F" +
-      "INISH\020\003\022\n\n\006CANCEL\020\004B]\n#com.yuanmai.proto" +
-      "buf.mall.aftersaleP\001Z4github.com/buzzxu/" +
-      "yuanmai-mall-protobuf-go;aftersaleb\006prot" +
-      "o3"
+      "order/types.proto\032!mall/protobuf/product" +
+      "/types.proto\032\"mall/protobuf/approval/typ" +
+      "es.proto\"\327\004\n\022AfterSaleOrderInfo\022\n\n\002id\030\001 " +
+      "\001(\003\022\022\n\nsupplierId\030\002 \001(\005\022\022\n\napprovalId\030\003 " +
+      "\001(\003\022\023\n\013orderNumber\030\004 \001(\t\022\031\n\021parentOrderN" +
+      "umber\030\005 \001(\t\022\025\n\roriginOrderId\030\006 \001(\003\022\031\n\021or" +
+      "iginOrderNumber\030\007 \001(\t\0224\n\004type\030\010 \001(\0162&.ma" +
+      "ll.protobuf.aftersale.AfterSaleType\0222\n\005s" +
+      "tate\030\t \001(\0162#.mall.protobuf.aftersale.Aft" +
+      "erState\0227\n\016temporaryState\030\n \001(\0162\037.mall.p" +
+      "rotobuf.order.OrderState\022=\n\rapprovalStat" +
+      "e\030\013 \001(\0162&.mall.protobuf.approval.Approva" +
+      "lStatus\022\016\n\006amount\030\014 \001(\003\022\021\n\tpayAmount\030\r \001" +
+      "(\003\022\016\n\006reason\030\016 \001(\005\022\023\n\013description\030\017 \001(\t\022" +
+      "\016\n\006remark\030\020 \001(\t\022\022\n\noperatorId\030\021 \001(\003\022\020\n\010o" +
+      "perator\030\022 \001(\t\022:\n\005items\030\023 \003(\0132+.mall.prot" +
+      "obuf.aftersale.AfterSaleOrderItem\022\017\n\007add" +
+      "ress\030\024 \001(\t\"\215\002\n\022AfterSaleOrderItem\022\n\n\002id\030" +
+      "\001 \001(\003\022\023\n\013productName\030\002 \001(\t\022\016\n\006number\030\003 \001" +
+      "(\005\022\016\n\006amount\030\004 \001(\003\022\021\n\tpayAmount\030\005 \001(\003\022\r\n" +
+      "\005price\030\006 \001(\003\022\r\n\005image\030\007 \001(\t\022\r\n\005paths\030\010 \003" +
+      "(\t\022*\n\004unit\030\t \001(\0162\034.mall.protobuf.product" +
+      ".Units\0228\n\010unitType\030\n \001(\0162&.mall.protobuf" +
+      ".product.ProductUnitType\022\020\n\010unitDesc\030\013 \001" +
+      "(\t\"\251\004\n\020AfterSaleHistory\022\n\n\002id\030\001 \001(\003\022\r\n\005o" +
+      "bjId\030\002 \001(\003\022\031\n\021parentOrderNumber\030\003 \001(\t\022\023\n" +
+      "\013orderNumber\030\004 \001(\t\022\016\n\006amount\030\005 \001(\003\0224\n\004ty" +
+      "pe\030\006 \001(\0162&.mall.protobuf.aftersale.After" +
+      "SaleType\022\020\n\010typeText\030\007 \001(\t\0227\n\nafterState" +
+      "\030\010 \001(\0162#.mall.protobuf.aftersale.AfterSt" +
+      "ate\022\026\n\016afterStateText\030\t \001(\t\022=\n\rapprovalS" +
+      "tate\030\n \001(\0162&.mall.protobuf.approval.Appr" +
+      "ovalStatus\022\031\n\021approvalStateText\030\013 \001(\t\022\023\n" +
+      "\013applicantId\030\014 \001(\003\022\021\n\tapplicant\030\r \001(\t\022\022\n" +
+      "\noperatorId\030\016 \001(\003\022\020\n\010operator\030\017 \001(\t\022+\n\tc" +
+      "ommodity\030\020 \003(\0132\030.mall.protobuf.Commodity" +
+      "\022\016\n\006remark\030\021 \001(\t\022\023\n\013applyReason\030\022 \001(\t\022\026\n" +
+      "\016approvalReason\030\023 \001(\t\022\017\n\007counter\030\024 \001(\005*B" +
+      "\n\rAfterSaleType\022\n\n\006REFUND\020\000\022\014\n\010EXCHANGE\020" +
+      "\001\022\013\n\007ADDRESS\020\002\022\n\n\006RETURN\020\003*B\n\nAfterState" +
+      "\022\010\n\004NONE\020\000\022\t\n\005APPLY\020\002\022\007\n\003ING\020\001\022\n\n\006FINISH" +
+      "\020\003\022\n\n\006CANCEL\020\004B]\n#com.yuanmai.protobuf.m" +
+      "all.aftersaleP\001Z4github.com/buzzxu/yuanm" +
+      "ai-mall-protobuf-go;aftersaleb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -91,6 +94,7 @@ public final class Types {
           com.google.type.DateTimeProto.getDescriptor(),
           com.yuanmai.protobuf.mall.Types.getDescriptor(),
           com.yuanmai.protobuf.mall.order.Types.getDescriptor(),
+          com.yuanmai.protobuf.mall.product.Types.getDescriptor(),
           com.yuanmai.protobuf.mall.approval.Types.getDescriptor(),
         });
     internal_static_mall_protobuf_aftersale_AfterSaleOrderInfo_descriptor =
@@ -104,7 +108,7 @@ public final class Types {
     internal_static_mall_protobuf_aftersale_AfterSaleOrderItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mall_protobuf_aftersale_AfterSaleOrderItem_descriptor,
-        new java.lang.String[] { "Id", "ProductName", "Number", "Amount", "PayAmount", "Price", "Image", "Paths", });
+        new java.lang.String[] { "Id", "ProductName", "Number", "Amount", "PayAmount", "Price", "Image", "Paths", "Unit", "UnitType", "UnitDesc", });
     internal_static_mall_protobuf_aftersale_AfterSaleHistory_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_mall_protobuf_aftersale_AfterSaleHistory_fieldAccessorTable = new
@@ -115,6 +119,7 @@ public final class Types {
     com.google.type.DateTimeProto.getDescriptor();
     com.yuanmai.protobuf.mall.Types.getDescriptor();
     com.yuanmai.protobuf.mall.order.Types.getDescriptor();
+    com.yuanmai.protobuf.mall.product.Types.getDescriptor();
     com.yuanmai.protobuf.mall.approval.Types.getDescriptor();
   }
 

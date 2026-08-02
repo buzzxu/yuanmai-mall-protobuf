@@ -115,4 +115,5 @@ message OrderItem {
     string remark =30;
     repeated mall.protobuf.order.ItemSpec specs = 31;
     int64 refundAmount =32;
+    mall.protobuf.product.ProductUnitType unitType = 33;
 }

@@ -20,6 +20,8 @@ private static final long serialVersionUID = 0L;
     image_ = "";
     unit_ = 0;
     specs_ = java.util.Collections.emptyList();
+    unitType_ = 0;
+    unitDesc_ = "";
   }
 
   @java.lang.Override
@@ -66,7 +68,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       productName_ = s;
@@ -82,7 +84,7 @@ private static final long serialVersionUID = 0L;
       getProductNameBytes() {
     java.lang.Object ref = productName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       productName_ = b;
@@ -127,7 +129,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       image_ = s;
@@ -143,7 +145,7 @@ private static final long serialVersionUID = 0L;
       getImageBytes() {
     java.lang.Object ref = image_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       image_ = b;
@@ -185,7 +187,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .mall.protobuf.order.ItemSpec specs = 7;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder> 
+  public java.util.List<? extends com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder>
       getSpecsOrBuilderList() {
     return specs_;
   }
@@ -210,6 +212,63 @@ private static final long serialVersionUID = 0L;
   public com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder getSpecsOrBuilder(
       int index) {
     return specs_.get(index);
+  }
+
+  public static final int UNITTYPE_FIELD_NUMBER = 8;
+  private int unitType_ = 0;
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+   * @return The enum numeric value on the wire for unitType.
+   */
+  @java.lang.Override public int getUnitTypeValue() {
+    return unitType_;
+  }
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+   * @return The unitType.
+   */
+  @java.lang.Override public com.yuanmai.protobuf.mall.product.ProductUnitType getUnitType() {
+    com.yuanmai.protobuf.mall.product.ProductUnitType result = com.yuanmai.protobuf.mall.product.ProductUnitType.forNumber(unitType_);
+    return result == null ? com.yuanmai.protobuf.mall.product.ProductUnitType.UNRECOGNIZED : result;
+  }
+
+  public static final int UNITDESC_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object unitDesc_ = "";
+  /**
+   * <code>string unitDesc = 9;</code>
+   * @return The unitDesc.
+   */
+  @java.lang.Override
+  public java.lang.String getUnitDesc() {
+    java.lang.Object ref = unitDesc_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs =
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      unitDesc_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string unitDesc = 9;</code>
+   * @return The bytes for unitDesc.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUnitDescBytes() {
+    java.lang.Object ref = unitDesc_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      unitDesc_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -247,6 +306,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < specs_.size(); i++) {
       output.writeMessage(7, specs_.get(i));
     }
+    if (unitType_ != com.yuanmai.protobuf.mall.product.ProductUnitType.PRODUCT_UNIT_TYPE_LEGACY.getNumber()) {
+      output.writeEnum(8, unitType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unitDesc_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, unitDesc_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -282,6 +347,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, specs_.get(i));
     }
+    if (unitType_ != com.yuanmai.protobuf.mall.product.ProductUnitType.PRODUCT_UNIT_TYPE_LEGACY.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, unitType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unitDesc_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, unitDesc_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -310,6 +382,9 @@ private static final long serialVersionUID = 0L;
     if (unit_ != other.unit_) return false;
     if (!getSpecsList()
         .equals(other.getSpecsList())) return false;
+    if (unitType_ != other.unitType_) return false;
+    if (!getUnitDesc()
+        .equals(other.getUnitDesc())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -339,6 +414,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getSpecsList().hashCode();
     }
+    hash = (37 * hash) + UNITTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + unitType_;
+    hash = (37 * hash) + UNITDESC_FIELD_NUMBER;
+    hash = (53 * hash) + getUnitDesc().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -483,6 +562,8 @@ private static final long serialVersionUID = 0L;
         specsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      unitType_ = 0;
+      unitDesc_ = "";
       return this;
     }
 
@@ -546,6 +627,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.unit_ = unit_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.unitType_ = unitType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.unitDesc_ = unitDesc_;
       }
     }
 
@@ -633,13 +720,21 @@ private static final long serialVersionUID = 0L;
             specsBuilder_ = null;
             specs_ = other.specs_;
             bitField0_ = (bitField0_ & ~0x00000040);
-            specsBuilder_ = 
+            specsBuilder_ =
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getSpecsFieldBuilder() : null;
           } else {
             specsBuilder_.addAllMessages(other.specs_);
           }
         }
+      }
+      if (other.unitType_ != 0) {
+        setUnitTypeValue(other.getUnitTypeValue());
+      }
+      if (!other.getUnitDesc().isEmpty()) {
+        unitDesc_ = other.unitDesc_;
+        bitField0_ |= 0x00000100;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -710,6 +805,16 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 58
+            case 64: {
+              unitType_ = input.readEnum();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 64
+            case 74: {
+              unitDesc_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -784,7 +889,7 @@ private static final long serialVersionUID = 0L;
         getProductNameBytes() {
       java.lang.Object ref = productName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         productName_ = b;
@@ -920,7 +1025,7 @@ private static final long serialVersionUID = 0L;
         getImageBytes() {
       java.lang.Object ref = image_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         image_ = b;
@@ -1215,7 +1320,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .mall.protobuf.order.ItemSpec specs = 7;</code>
      */
-    public java.util.List<? extends com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder> 
+    public java.util.List<? extends com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder>
          getSpecsOrBuilderList() {
       if (specsBuilder_ != null) {
         return specsBuilder_.getMessageOrBuilderList();
@@ -1241,12 +1346,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .mall.protobuf.order.ItemSpec specs = 7;</code>
      */
-    public java.util.List<com.yuanmai.protobuf.mall.order.ItemSpec.Builder> 
+    public java.util.List<com.yuanmai.protobuf.mall.order.ItemSpec.Builder>
          getSpecsBuilderList() {
       return getSpecsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.yuanmai.protobuf.mall.order.ItemSpec, com.yuanmai.protobuf.mall.order.ItemSpec.Builder, com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder> 
+        com.yuanmai.protobuf.mall.order.ItemSpec, com.yuanmai.protobuf.mall.order.ItemSpec.Builder, com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder>
         getSpecsFieldBuilder() {
       if (specsBuilder_ == null) {
         specsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -1258,6 +1363,131 @@ private static final long serialVersionUID = 0L;
         specs_ = null;
       }
       return specsBuilder_;
+    }
+
+    private int unitType_ = 0;
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+     * @return The enum numeric value on the wire for unitType.
+     */
+    @java.lang.Override public int getUnitTypeValue() {
+      return unitType_;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+     * @param value The enum numeric value on the wire for unitType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitTypeValue(int value) {
+      unitType_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+     * @return The unitType.
+     */
+    @java.lang.Override
+    public com.yuanmai.protobuf.mall.product.ProductUnitType getUnitType() {
+      com.yuanmai.protobuf.mall.product.ProductUnitType result = com.yuanmai.protobuf.mall.product.ProductUnitType.forNumber(unitType_);
+      return result == null ? com.yuanmai.protobuf.mall.product.ProductUnitType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+     * @param value The unitType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitType(com.yuanmai.protobuf.mall.product.ProductUnitType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      unitType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUnitType() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      unitType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object unitDesc_ = "";
+    /**
+     * <code>string unitDesc = 9;</code>
+     * @return The unitDesc.
+     */
+    public java.lang.String getUnitDesc() {
+      java.lang.Object ref = unitDesc_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unitDesc_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string unitDesc = 9;</code>
+     * @return The bytes for unitDesc.
+     */
+    public com.google.protobuf.ByteString
+        getUnitDescBytes() {
+      java.lang.Object ref = unitDesc_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unitDesc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string unitDesc = 9;</code>
+     * @param value The unitDesc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitDesc(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      unitDesc_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string unitDesc = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUnitDesc() {
+      unitDesc_ = getDefaultInstance().getUnitDesc();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string unitDesc = 9;</code>
+     * @param value The bytes for unitDesc to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitDescBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      unitDesc_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -1322,4 +1552,3 @@ private static final long serialVersionUID = 0L;
   }
 
 }
-

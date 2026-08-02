@@ -262,4 +262,14 @@ enum Units{
     LF = 26;
     // 项
     ITEM = 27;
+    // 自定义单位占位；实际名称由 unitDesc 保存
+    UNKNOWN = 28;
+}
+
+// 商品单位计价语义。枚举值使用前缀避免与同包其他枚举值冲突。
+enum ProductUnitType {
+    PRODUCT_UNIT_TYPE_LEGACY = 0;
+    PRODUCT_UNIT_TYPE_NORMAL = 1;
+    PRODUCT_UNIT_TYPE_CALCULATE = 2;
+    PRODUCT_UNIT_TYPE_CUSTOM = 3;
 }

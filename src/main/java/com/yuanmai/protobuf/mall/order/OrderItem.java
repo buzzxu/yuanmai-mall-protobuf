@@ -33,6 +33,7 @@ private static final long serialVersionUID = 0L;
     refundNo_ = "";
     remark_ = "";
     specs_ = java.util.Collections.emptyList();
+    unitType_ = 0;
   }
 
   @java.lang.Override
@@ -822,6 +823,24 @@ private static final long serialVersionUID = 0L;
     return refundAmount_;
   }
 
+  public static final int UNITTYPE_FIELD_NUMBER = 33;
+  private int unitType_ = 0;
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+   * @return The enum numeric value on the wire for unitType.
+   */
+  @java.lang.Override public int getUnitTypeValue() {
+    return unitType_;
+  }
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+   * @return The unitType.
+   */
+  @java.lang.Override public com.yuanmai.protobuf.mall.product.ProductUnitType getUnitType() {
+    com.yuanmai.protobuf.mall.product.ProductUnitType result = com.yuanmai.protobuf.mall.product.ProductUnitType.forNumber(unitType_);
+    return result == null ? com.yuanmai.protobuf.mall.product.ProductUnitType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -931,6 +950,9 @@ private static final long serialVersionUID = 0L;
     }
     if (refundAmount_ != 0L) {
       output.writeInt64(32, refundAmount_);
+    }
+    if (unitType_ != com.yuanmai.protobuf.mall.product.ProductUnitType.PRODUCT_UNIT_TYPE_LEGACY.getNumber()) {
+      output.writeEnum(33, unitType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1056,6 +1078,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(32, refundAmount_);
     }
+    if (unitType_ != com.yuanmai.protobuf.mall.product.ProductUnitType.PRODUCT_UNIT_TYPE_LEGACY.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(33, unitType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1133,6 +1159,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSpecsList())) return false;
     if (getRefundAmount()
         != other.getRefundAmount()) return false;
+    if (unitType_ != other.unitType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1220,6 +1247,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + REFUNDAMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getRefundAmount());
+    hash = (37 * hash) + UNITTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + unitType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1351,6 +1380,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       id_ = 0L;
       orderNumber_ = "";
       specType_ = 0;
@@ -1389,6 +1419,7 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x40000000);
       refundAmount_ = 0L;
+      unitType_ = 0;
       return this;
     }
 
@@ -1417,6 +1448,7 @@ private static final long serialVersionUID = 0L;
       com.yuanmai.protobuf.mall.order.OrderItem result = new com.yuanmai.protobuf.mall.order.OrderItem(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
+      if (bitField1_ != 0) { buildPartial1(result); }
       onBuilt();
       return result;
     }
@@ -1527,6 +1559,13 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
         result.refundAmount_ = refundAmount_;
+      }
+    }
+
+    private void buildPartial1(com.yuanmai.protobuf.mall.order.OrderItem result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.unitType_ = unitType_;
       }
     }
 
@@ -1718,6 +1757,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getRefundAmount() != 0L) {
         setRefundAmount(other.getRefundAmount());
+      }
+      if (other.unitType_ != 0) {
+        setUnitTypeValue(other.getUnitTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1913,6 +1955,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x80000000;
               break;
             } // case 256
+            case 264: {
+              unitType_ = input.readEnum();
+              bitField1_ |= 0x00000001;
+              break;
+            } // case 264
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1929,6 +1976,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int bitField0_;
+    private int bitField1_;
 
     private long id_ ;
     /**
@@ -3741,6 +3789,59 @@ private static final long serialVersionUID = 0L;
     public Builder clearRefundAmount() {
       bitField0_ = (bitField0_ & ~0x80000000);
       refundAmount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int unitType_ = 0;
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+     * @return The enum numeric value on the wire for unitType.
+     */
+    @java.lang.Override public int getUnitTypeValue() {
+      return unitType_;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+     * @param value The enum numeric value on the wire for unitType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitTypeValue(int value) {
+      unitType_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+     * @return The unitType.
+     */
+    @java.lang.Override
+    public com.yuanmai.protobuf.mall.product.ProductUnitType getUnitType() {
+      com.yuanmai.protobuf.mall.product.ProductUnitType result = com.yuanmai.protobuf.mall.product.ProductUnitType.forNumber(unitType_);
+      return result == null ? com.yuanmai.protobuf.mall.product.ProductUnitType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+     * @param value The unitType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnitType(com.yuanmai.protobuf.mall.product.ProductUnitType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000001;
+      unitType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUnitType() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      unitType_ = 0;
       onChanged();
       return this;
     }

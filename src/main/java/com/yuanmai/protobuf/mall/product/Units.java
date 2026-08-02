@@ -236,6 +236,14 @@ public enum Units
    * <code>ITEM = 27;</code>
    */
   ITEM(27),
+  /**
+   * <pre>
+   * 自定义单位占位；实际名称由 unitDesc 保存
+   * </pre>
+   *
+   * <code>UNKNOWN = 28;</code>
+   */
+  UNKNOWN(28),
   UNRECOGNIZED(-1),
   ;
 
@@ -463,6 +471,14 @@ public enum Units
    * <code>ITEM = 27;</code>
    */
   public static final int ITEM_VALUE = 27;
+  /**
+   * <pre>
+   * 自定义单位占位；实际名称由 unitDesc 保存
+   * </pre>
+   *
+   * <code>UNKNOWN = 28;</code>
+   */
+  public static final int UNKNOWN_VALUE = 28;
 
 
   public final int getNumber() {
@@ -517,6 +533,7 @@ public enum Units
       case 25: return PF;
       case 26: return LF;
       case 27: return ITEM;
+      case 28: return UNKNOWN;
       default: return null;
     }
   }

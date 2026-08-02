@@ -127,16 +127,20 @@ public final class Types {
       "\023SALE_TYPE_PROMOTION\020\002*9\n\tInputType\022\023\n\017I" +
       "NPUT_TYPE_NONE\020\000\022\t\n\005RADIO\020\001\022\014\n\010CHECKBOX\020" +
       "\002*%\n\010SpecType\022\013\n\007GENERAL\020\000\022\014\n\010MULTIPLE\020\001" +
-      "*\207\002\n\005Units\022\007\n\003PCS\020\000\022\007\n\003TAI\020\001\022\007\n\003PAN\020\002\022\007\n" +
+      "*\224\002\n\005Units\022\007\n\003PCS\020\000\022\007\n\003TAI\020\001\022\007\n\003PAN\020\002\022\007\n" +
       "\003GEN\020\003\022\010\n\004GUAN\020\004\022\010\n\004JUAN\020\005\022\013\n\007PACKAGE\020\006\022" +
       "\010\n\004PIAN\020\007\022\007\n\003BAG\020\010\022\007\n\003SET\020\t\022\t\n\005PIECE\020\n\022\n" +
       "\n\006CARTON\020\013\022\t\n\005GROUP\020\014\022\t\n\005SHEET\020\r\022\006\n\002BA\020\016" +
       "\022\010\n\004TONG\020\017\022\007\n\003SHU\020\020\022\005\n\001M\020\021\022\006\n\002CM\020\022\022\006\n\002MM" +
       "\020\023\022\005\n\001L\020\024\022\006\n\002ML\020\025\022\006\n\002MG\020\026\022\005\n\001K\020\027\022\006\n\002KG\020\030" +
-      "\022\006\n\002PF\020\031\022\006\n\002LF\020\032\022\010\n\004ITEM\020\033BY\n!com.yuanma" +
-      "i.protobuf.mall.productP\001Z2github.com/bu" +
-      "zzxu/yuanmai-mall-protobuf-go;productb\006p" +
-      "roto3"
+      "\022\006\n\002PF\020\031\022\006\n\002LF\020\032\022\010\n\004ITEM\020\033\022\013\n\007UNKNOWN\020\034*" +
+      "\214\001\n\017ProductUnitType\022\034\n\030PRODUCT_UNIT_TYPE" +
+      "_LEGACY\020\000\022\034\n\030PRODUCT_UNIT_TYPE_NORMAL\020\001\022" +
+      "\037\n\033PRODUCT_UNIT_TYPE_CALCULATE\020\002\022\034\n\030PROD" +
+      "UCT_UNIT_TYPE_CUSTOM\020\003BY\n!com.yuanmai.pr" +
+      "otobuf.mall.productP\001Z2github.com/buzzxu" +
+      "/yuanmai-mall-protobuf-go;productb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

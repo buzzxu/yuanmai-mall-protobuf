@@ -83,4 +83,27 @@ public interface OrderItemMiniOrBuilder extends
    */
   com.yuanmai.protobuf.mall.order.ItemSpecOrBuilder getSpecsOrBuilder(
       int index);
+
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+   * @return The enum numeric value on the wire for unitType.
+   */
+  int getUnitTypeValue();
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 8;</code>
+   * @return The unitType.
+   */
+  com.yuanmai.protobuf.mall.product.ProductUnitType getUnitType();
+
+  /**
+   * <code>string unitDesc = 9;</code>
+   * @return The unitDesc.
+   */
+  java.lang.String getUnitDesc();
+  /**
+   * <code>string unitDesc = 9;</code>
+   * @return The bytes for unitDesc.
+   */
+  com.google.protobuf.ByteString
+      getUnitDescBytes();
 }

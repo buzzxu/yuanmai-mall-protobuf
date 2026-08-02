@@ -97,4 +97,38 @@ public interface AfterSaleOrderItemOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPathsBytes(int index);
+
+  /**
+   * <code>.mall.protobuf.product.Units unit = 9;</code>
+   * @return The enum numeric value on the wire for unit.
+   */
+  int getUnitValue();
+  /**
+   * <code>.mall.protobuf.product.Units unit = 9;</code>
+   * @return The unit.
+   */
+  com.yuanmai.protobuf.mall.product.Units getUnit();
+
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 10;</code>
+   * @return The enum numeric value on the wire for unitType.
+   */
+  int getUnitTypeValue();
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 10;</code>
+   * @return The unitType.
+   */
+  com.yuanmai.protobuf.mall.product.ProductUnitType getUnitType();
+
+  /**
+   * <code>string unitDesc = 11;</code>
+   * @return The unitDesc.
+   */
+  java.lang.String getUnitDesc();
+  /**
+   * <code>string unitDesc = 11;</code>
+   * @return The bytes for unitDesc.
+   */
+  com.google.protobuf.ByteString
+      getUnitDescBytes();
 }

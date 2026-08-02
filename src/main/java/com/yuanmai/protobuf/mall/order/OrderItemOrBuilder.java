@@ -309,4 +309,15 @@ public interface OrderItemOrBuilder extends
    * @return The refundAmount.
    */
   long getRefundAmount();
+
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+   * @return The enum numeric value on the wire for unitType.
+   */
+  int getUnitTypeValue();
+  /**
+   * <code>.mall.protobuf.product.ProductUnitType unitType = 33;</code>
+   * @return The unitType.
+   */
+  com.yuanmai.protobuf.mall.product.ProductUnitType getUnitType();
 }

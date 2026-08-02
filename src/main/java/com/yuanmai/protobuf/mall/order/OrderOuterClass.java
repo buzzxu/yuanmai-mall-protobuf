@@ -90,7 +90,7 @@ public final class OrderOuterClass {
       "0 \001(\003\022\r\n\005payer\0301 \001(\t\022\016\n\006fapiao\0302 \001(\010\022\016\n\006" +
       "billId\0303 \001(\003\022\024\n\014billingCycle\0304 \001(\t\022\026\n\016af" +
       "terSaleCount\0305 \001(\005\022\034\n\024aftersaleApplyEnab" +
-      "le\0306 \001(\010\"\272\005\n\tOrderItem\022\n\n\002id\030\001 \001(\003\022\023\n\013or" +
+      "le\0306 \001(\010\"\364\005\n\tOrderItem\022\n\n\002id\030\001 \001(\003\022\023\n\013or" +
       "derNumber\030\002 \001(\t\0221\n\010specType\030\003 \001(\0162\037.mall" +
       ".protobuf.product.SpecType\0227\n\nafterState" +
       "\030\004 \001(\0162#.mall.protobuf.aftersale.AfterSt" +
@@ -107,10 +107,11 @@ public final class OrderOuterClass {
       "Desc\030\032 \001(\t\022\023\n\013outRefundNo\030\033 \001(\t\022\020\n\010refun" +
       "dNo\030\034 \001(\t\022\016\n\006volume\030\035 \001(\002\022\016\n\006remark\030\036 \001(" +
       "\t\022,\n\005specs\030\037 \003(\0132\035.mall.protobuf.order.I" +
-      "temSpec\022\024\n\014refundAmount\030  \001(\003BU\n\037com.yua" +
-      "nmai.protobuf.mall.orderP\001Z0github.com/b" +
-      "uzzxu/yuanmai-mall-protobuf-go;orderb\006pr" +
-      "oto3"
+      "temSpec\022\024\n\014refundAmount\030  \001(\003\0228\n\010unitTyp" +
+      "e\030! \001(\0162&.mall.protobuf.product.ProductU" +
+      "nitTypeBU\n\037com.yuanmai.protobuf.mall.ord" +
+      "erP\001Z0github.com/buzzxu/yuanmai-mall-pro" +
+      "tobuf-go;orderb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -143,7 +144,7 @@ public final class OrderOuterClass {
     internal_static_mall_protobuf_order_OrderItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mall_protobuf_order_OrderItem_descriptor,
-        new java.lang.String[] { "Id", "OrderNumber", "SpecType", "AfterState", "SupplierId", "CategoryId", "Category", "BrandId", "Brand", "ProductId", "ProductName", "SkuId", "SkuName", "Sku", "Barcode", "Marque", "Image", "Number", "Price", "PriceCost", "Amount", "AmountCost", "Discount", "Integral", "Unit", "UnitDesc", "OutRefundNo", "RefundNo", "Volume", "Remark", "Specs", "RefundAmount", });
+        new java.lang.String[] { "Id", "OrderNumber", "SpecType", "AfterState", "SupplierId", "CategoryId", "Category", "BrandId", "Brand", "ProductId", "ProductName", "SkuId", "SkuName", "Sku", "Barcode", "Marque", "Image", "Number", "Price", "PriceCost", "Amount", "AmountCost", "Discount", "Integral", "Unit", "UnitDesc", "OutRefundNo", "RefundNo", "Volume", "Remark", "Specs", "RefundAmount", "UnitType", });
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.type.DateTimeProto.getDescriptor();
     com.yuanmai.protobuf.pay.Types.getDescriptor();

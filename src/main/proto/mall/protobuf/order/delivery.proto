@@ -33,4 +33,6 @@ message OrderItemMini {
     string image =5;
     mall.protobuf.product.Units unit = 6;
     repeated mall.protobuf.order.ItemSpec specs = 7;
+    mall.protobuf.product.ProductUnitType unitType = 8;
+    string unitDesc = 9;
 }

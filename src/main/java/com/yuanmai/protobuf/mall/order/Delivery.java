@@ -46,14 +46,16 @@ public final class Delivery {
       "xpress.ExpressState\0221\n\006traces\030\t \001(\0132!.ma" +
       "ll.protobuf.express.TracesInfo\022\017\n\007itemId" +
       "s\030\n \003(\003\0221\n\005items\030\013 \003(\0132\".mall.protobuf.o" +
-      "rder.OrderItemMini\"\271\001\n\rOrderItemMini\022\n\n\002" +
+      "rder.OrderItemMini\"\205\002\n\rOrderItemMini\022\n\n\002" +
       "id\030\001 \001(\003\022\023\n\013productName\030\002 \001(\t\022\016\n\006number\030" +
       "\003 \001(\005\022\016\n\006amount\030\004 \001(\003\022\r\n\005image\030\005 \001(\t\022*\n\004" +
       "unit\030\006 \001(\0162\034.mall.protobuf.product.Units" +
       "\022,\n\005specs\030\007 \003(\0132\035.mall.protobuf.order.It" +
-      "emSpecBU\n\037com.yuanmai.protobuf.mall.orde" +
-      "rP\001Z0github.com/buzzxu/yuanmai-mall-prot" +
-      "obuf-go;orderb\006proto3"
+      "emSpec\0228\n\010unitType\030\010 \001(\0162&.mall.protobuf" +
+      ".product.ProductUnitType\022\020\n\010unitDesc\030\t \001" +
+      "(\tBU\n\037com.yuanmai.protobuf.mall.orderP\001Z" +
+      "0github.com/buzzxu/yuanmai-mall-protobuf" +
+      "-go;orderb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -75,7 +77,7 @@ public final class Delivery {
     internal_static_mall_protobuf_order_OrderItemMini_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mall_protobuf_order_OrderItemMini_descriptor,
-        new java.lang.String[] { "Id", "ProductName", "Number", "Amount", "Image", "Unit", "Specs", });
+        new java.lang.String[] { "Id", "ProductName", "Number", "Amount", "Image", "Unit", "Specs", "UnitType", "UnitDesc", });
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.type.DateTimeProto.getDescriptor();
     com.yuanmai.protobuf.mall.order.Types.getDescriptor();

@@ -6,6 +6,7 @@ import com.yuanmai.mall.objects.order.ItemSpecVal;
 import com.yuanmai.mall.objects.order.OrderDelivery;
 import com.yuanmai.mall.objects.order.OrderItemMini;
 import com.yuanmai.mall.objects.product.SpecType;
+import com.yuanmai.mall.objects.product.ProductUnitType;
 import com.yuanmai.mall.objects.product.Units;
 import com.yuanmai.thirdparty.express.ExpressState;
 import com.yuanmai.thirdparty.express.datas.TracesInfo;
@@ -55,10 +56,17 @@ public interface ProtobufToMall {
     })
     TracesInfo to(com.yuanmai.protobuf.mall.express.TracesInfo obj);
 
-    @ValueMappings({
-            @ValueMapping(target = "UNKNOWN",source = "UNRECOGNIZED")
-    })
+    @ValueMapping(target = "UNKNOWN",source = "UNRECOGNIZED")
     Units to(com.yuanmai.protobuf.mall.product.Units obj);
+
+    @ValueMappings({
+            @ValueMapping(target = "LEGACY", source = "PRODUCT_UNIT_TYPE_LEGACY"),
+            @ValueMapping(target = "NORMAL", source = "PRODUCT_UNIT_TYPE_NORMAL"),
+            @ValueMapping(target = "CALCULATE", source = "PRODUCT_UNIT_TYPE_CALCULATE"),
+            @ValueMapping(target = "CUSTOM", source = "PRODUCT_UNIT_TYPE_CUSTOM"),
+            @ValueMapping(target = "LEGACY", source = "UNRECOGNIZED")
+    })
+    ProductUnitType to(com.yuanmai.protobuf.mall.product.ProductUnitType obj);
 
     @ValueMappings({
             @ValueMapping(target = "UNKNOWS",source = "UNRECOGNIZED")
